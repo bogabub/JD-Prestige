@@ -1,0 +1,9 @@
+{
+  "name": "jd-prestige-quickbooks-booking",
+  "version": "4.0.0",
+  "private": true,
+  "description": "JD Prestige booking with QuickBooks Online payments and PostgreSQL",
+  "engines": {"node": ">=20"},
+  "scripts": {"start": "node server.js"},
+  "dependencies": {"pg": "^8.16.3"}
+}
