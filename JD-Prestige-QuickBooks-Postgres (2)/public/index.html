@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a haircut with Dani or Joviel at JD Prestige.">
+  <title>JD Prestige | Barber Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="site-nav"><div class="logo">JD PRESTIGE</div><a href="#booking" class="nav-btn">Book Now</a></nav>
+  <div class="hero-content">
+    <p class="eyebrow">CLEAN CUTS. EASY BOOKING.</p>
+    <h1>Book Your Next Cut</h1>
+    <p>Choose your barber, select your service, and pay your deposit or full amount securely through QuickBooks.</p>
+    <a href="#barbers" class="primary-btn">Choose Your Barber</a>
+  </div>
+</header>
+<main>
+  <section id="barbers" class="barbers-section">
+    <div class="section-heading"><p class="eyebrow dark">YOUR BARBER</p><h2>Who Do You Want to Book?</h2><p class="subtext">Choose Dani or Joviel. Each barber has their own schedule.</p></div>
+    <div class="barber-grid">
+      <button class="barber-card" type="button" data-barber="Dani"><span class="barber-avatar">D</span><span class="barber-name">Dani</span><span class="barber-copy">Book with Dani</span></button>
+      <button class="barber-card" type="button" data-barber="Joviel"><span class="barber-avatar">J</span><span class="barber-name">Joviel</span><span class="barber-copy">Book with Joviel</span></button>
+    </div>
+  </section>
+  <section class="services-section">
+    <div class="section-heading"><p class="eyebrow dark">SERVICES</p><h2>Choose Your Service</h2></div>
+    <div class="service-grid">
+      <article class="service-card" data-service="haircut"><span class="service-icon">✂</span><h3>Haircut</h3><p>Fresh cut tailored to your style.</p><div class="service-meta"><span>45 min</span><strong>$50</strong></div></article>
+      <article class="service-card" data-service="haircut-beard"><span class="service-icon">◆</span><h3>Haircut + Beard</h3><p>Full haircut with beard shape-up.</p><div class="service-meta"><span>60 min</span><strong>$55</strong></div></article>
+      <article class="service-card" data-service="line-up"><span class="service-icon">★</span><h3>Line Up</h3><p>Sharp edge-up and clean finish.</p><div class="service-meta"><span>20 min</span><strong>$20</strong></div></article>
+    </div>
+  </section>
+  <section id="booking" class="booking-section">
+    <div class="booking-card">
+      <div class="section-heading left"><p class="eyebrow dark">APPOINTMENT</p><h2>Book Your Cut</h2><p class="subtext">After you submit, QuickBooks opens a secure payment page.</p></div>
+      <form id="bookingForm">
+        <div class="form-row">
+          <label>Full Name<input id="name" type="text" placeholder="Your name" maxlength="100" required></label>
+          <label>Email<input id="email" type="email" placeholder="you@example.com" maxlength="180" required></label>
+        </div>
+        <div class="form-row">
+          <label>Phone Number<input id="phone" type="tel" placeholder="(555) 555-5555" maxlength="40" required></label>
+          <label>Barber<select id="barber" required><option value="">Choose a barber</option><option>Dani</option><option>Joviel</option></select></label>
+        </div>
+        <label>Service<select id="service" required><option value="">Select a service</option><option value="haircut">Haircut — $50</option><option value="haircut-beard">Haircut + Beard — $55</option><option value="line-up">Line Up — $20</option></select></label>
+        <div class="form-row">
+          <label>Date<input id="date" type="date" required></label>
+          <label>Time<select id="time" required disabled><option value="">Choose barber and date first</option></select></label>
+        </div>
+        <fieldset class="payment-choice">
+          <legend>How would you like to pay?</legend>
+          <label class="payment-option selected"><input type="radio" name="paymentChoice" value="deposit" checked><span><strong>Pay deposit</strong><small id="depositText">Reserve your appointment with a deposit.</small></span><strong id="depositAmount">—</strong></label>
+          <label class="payment-option"><input type="radio" name="paymentChoice" value="full"><span><strong>Pay in full</strong><small>No service balance due after payment.</small></span><strong id="fullAmount">—</strong></label>
+        </fieldset>
+        <div id="paymentSummary" class="payment-summary hidden"><div><span>Service total</span><strong id="summaryTotal">$0.00</strong></div><div><span>Pay through QuickBooks now</span><strong id="summaryToday">$0.00</strong></div><div><span>Remaining after this payment</span><strong id="summaryBalance">$0.00</strong></div></div>
+        <label>Notes<textarea id="notes" rows="4" maxlength="500" placeholder="Optional details about your cut"></textarea></label>
+        <button id="bookButton" type="submit" class="primary-btn full">Continue to QuickBooks Payment</button>
+        <p class="stripe-note">Your payment information is entered on QuickBooks, not on this website.</p>
+        <p id="message" class="message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><strong>JD PRESTIGE</strong><span>Appointments made simple.</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
